@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased text-gray-900 bg-white dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+  .dark input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #0f172a inset;
+    -webkit-text-fill-color: #f1f5f9;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
+
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .btn-gradient {
+    @apply relative overflow-hidden bg-brand-gradient bg-size-200 text-white shadow-brand transition-all duration-300;
+    background-position: 0% 50%;
+  }
+  .btn-gradient:hover {
+    background-position: 100% 50%;
+    @apply shadow-brand-lg -translate-y-0.5;
+  }
+  .btn-gradient:active {
+    @apply translate-y-0;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/60 shadow-xl dark:bg-slate-900/70 dark:border-white/10;
+  }
+
+  .input-focus-ring {
+    @apply focus:ring-4 focus:ring-brand-100 focus:border-brand-500 dark:focus:ring-brand-500/20 dark:focus:border-brand-400;
+  }
+
+  /* thin, brand-tinted scrollbar for panels/lists */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-brand-200 rounded-full dark:bg-brand-800;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* --- Shared surfaces, used across pages/forms for a consistent dark theme --- */
+  .surface-card {
+    @apply bg-white border border-gray-100 shadow-sm dark:bg-slate-900 dark:border-slate-800;
+  }
+
+  .surface-panel {
+    @apply bg-gray-50 dark:bg-slate-800/60;
+  }
+
+  .surface-input {
+    @apply bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400
+      dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+
+  .surface-muted-text {
+    @apply text-gray-500 dark:text-slate-400;
+  }
+}
