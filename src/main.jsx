@@ -2,7 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "sonner";
-import { CheckCircle2, XCircle, AlertTriangle, Info, Loader2 } from "lucide-react";
+import {
+  CheckCircle2,
+  XCircle,
+  AlertTriangle,
+  Info,
+  Loader2,
+} from "lucide-react";
 import App from "./App.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
@@ -36,20 +42,25 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               classNames: {
                 toast:
                   "!rounded-2xl !border !shadow-brand-lg !font-sans !bg-white dark:!bg-slate-900 dark:!border-slate-700 !p-4",
-                title: "!font-semibold !text-[13.5px] !text-gray-900 dark:!text-slate-100",
-                description: "!text-[12.5px] !text-gray-500 dark:!text-slate-400",
+                title:
+                  "!font-semibold !text-[13.5px] !text-gray-900 dark:!text-slate-100",
+                description:
+                  "!text-[12.5px] !text-gray-500 dark:!text-slate-400",
                 closeButton:
                   "!bg-transparent !border-gray-200 dark:!border-slate-700 !text-gray-400 hover:!text-gray-600 dark:hover:!text-slate-200",
-                success: "!border-l-4 !border-l-emerald-500 [&_svg]:!text-emerald-500",
+                success:
+                  "!border-l-4 !border-l-emerald-500 [&_svg]:!text-emerald-500",
                 error: "!border-l-4 !border-l-rose-500 [&_svg]:!text-rose-500",
-                warning: "!border-l-4 !border-l-amber-500 [&_svg]:!text-amber-500",
+                warning:
+                  "!border-l-4 !border-l-amber-500 [&_svg]:!text-amber-500",
                 info: "!border-l-4 !border-l-brand-500 [&_svg]:!text-brand-500",
-                loading: "!border-l-4 !border-l-brand-400 [&_svg]:!text-brand-400",
+                loading:
+                  "!border-l-4 !border-l-brand-400 [&_svg]:!text-brand-400",
               },
             }}
           />
         </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
